@@ -1,6 +1,6 @@
 package com.example.practicekeycloak.user.presentation.validator;
 
-public interface MoblieValidator {
+public interface PhoneValidator {
     default boolean checkMobile(String mobile) {
         /**
          * 01[016]-0000/000-0000
