@@ -42,12 +42,12 @@ public class UserRegisterService {
         // 사용자 생성 성공, 비밀번호 설정
         String userId = CreatedResponseUtil.getCreatedId(response);
 
-        CredentialRepresentation pwdCredential = new CredentialRepresentation();
-        pwdCredential.setTemporary(false);
-        pwdCredential.setType(CredentialRepresentation.PASSWORD);
-        pwdCredential.setValue(dto.password());
+        CredentialRepresentation passwordCredential = new CredentialRepresentation();
+        passwordCredential.setTemporary(false);
+        passwordCredential.setType(CredentialRepresentation.PASSWORD);
+        passwordCredential.setValue(dto.password());
 
-        usersResource.get(userId).resetPassword(pwdCredential);
+        usersResource.get(userId).resetPassword(passwordCredential);
 
         // 기본 Role 부여
         RoleRepresentation userRole = keycloak.realm(properties.getRealm())
